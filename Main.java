@@ -1,5 +1,4 @@
 package lab5;
-///https://github.com/Julia20011974/AaSD
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -10,22 +9,22 @@ import java.util.Scanner;
 
 public class Main {
 
-	static int j = 0;// индекс для записи в файл
+	static int j = 0;// ГЁГ­Г¤ГҐГЄГ± Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ Гў ГґГ Г©Г«
 	static int step=0;//
 	static long time = 0;
 	static int compare = 0;
 	static int file = 0;
-	static int quantity = 0;//количество элементов в серии
-	static int length = 0;// длина серии(строчно)
+	static int quantity = 0;//ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Гў Г±ГҐГ°ГЁГЁ
+	static int length = 0;// Г¤Г«ГЁГ­Г  Г±ГҐГ°ГЁГЁ(Г±ГІГ°Г®Г·Г­Г®)
 	static int size=0;
 
 	public static void main(String[] args) throws IOException {
 
 		Scanner in = new Scanner(System.in);
 
-		System.out.println("Введите количество элементов массива:");
+		System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г¬Г Г±Г±ГЁГўГ :");
 		size = in.nextInt();
-		System.out.println("Выберите 1-рандом;\n" + "2- по возврастанию:\n" + "3- по убыванию");
+		System.out.println("Г‚Г»ГЎГҐГ°ГЁГІГҐ 1-Г°Г Г­Г¤Г®Г¬;\n" + "2- ГЇГ® ГўГ®Г§ГўГ°Г Г±ГІГ Г­ГЁГѕ:\n" + "3- ГЇГ® ГіГЎГ»ГўГ Г­ГЁГѕ");
 
 		String choice = in.next();
 		switch (choice) {
@@ -42,10 +41,10 @@ public class Main {
 		long begin = System.currentTimeMillis();
 		sort(size);
 		time = System.currentTimeMillis() - begin;
-		System.out.println("Сортировка окончена!");
-		System.out.println("Затраченное время: " + time+" миллисекунд");
-		System.out.println("Количество обращений к файлу: " + file);
-		System.out.println("Количество сравнений: " + compare);
+		System.out.println("Г‘Г®Г°ГІГЁГ°Г®ГўГЄГ  Г®ГЄГ®Г­Г·ГҐГ­Г !");
+		System.out.println("Г‡Г ГІГ°Г Г·ГҐГ­Г­Г®ГҐ ГўГ°ГҐГ¬Гї: " + time+" Г¬ГЁГ«Г«ГЁГ±ГҐГЄГіГ­Г¤");
+		System.out.println("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі: " + file);
+		System.out.println("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г°Г ГўГ­ГҐГ­ГЁГ©: " + compare);
 		in.close();
 	}
 
@@ -82,7 +81,7 @@ public class Main {
 	}
 
 	public static void sort(int size) throws IOException {
-		/// 1 проход
+		/// 1 ГЇГ°Г®ГµГ®Г¤
 		FileWriter f1 = new FileWriter("f1.txt");
 		FileWriter f2 = new FileWriter("f2.txt");
 		FileWriter f3 = new FileWriter("f3.txt");
@@ -92,7 +91,7 @@ public class Main {
 		while (sc.hasNext()) {
 			f1.write(Integer.toString(sc.nextInt()));
 			f1.write(" ");
-			file += 2;// обращение к файлу с которого считали + обращение к файлу в который записали
+			file += 2;// Г®ГЎГ°Г Г№ГҐГ­ГЁГҐ ГЄ ГґГ Г©Г«Гі Г± ГЄГ®ГІГ®Г°Г®ГЈГ® Г±Г·ГЁГІГ Г«ГЁ + Г®ГЎГ°Г Г№ГҐГ­ГЁГҐ ГЄ ГґГ Г©Г«Гі Гў ГЄГ®ГІГ®Г°Г»Г© Г§Г ГЇГЁГ±Г Г«ГЁ
 			if (sc.hasNext()) {
 				f2.write(Integer.toString(sc.nextInt()));
 				f2.write(" ");
@@ -110,7 +109,7 @@ public class Main {
 		f2.close();
 		f3.close();
 
-// 2 проход
+// 2 ГЇГ°Г®ГµГ®Г¤
 		FileReader f12 = new FileReader("f1.txt");
 		FileReader f22 = new FileReader("f2.txt");
 		FileReader f32 = new FileReader("f3.txt");
@@ -184,7 +183,7 @@ public class Main {
 			f63.close();
 
 			if (file2.length() == 0 && file3.length() == 0) {
-				System.out.println("Смотри в файле №1");
+				System.out.println("Г‘Г¬Г®ГІГ°ГЁ Гў ГґГ Г©Г«ГҐ В№1");
 				break;
 			} 
 			
@@ -226,7 +225,7 @@ public class Main {
 			f64.close();
 
 			if (file5.length() == 0 && file6.length() == 0) {
-				System.out.println("Смотри в файле №4");
+				System.out.println("Г‘Г¬Г®ГІГ°ГЁ Гў ГґГ Г©Г«ГҐ В№4");
 				break;
 			} 
 			quantity *= 3;
@@ -243,21 +242,21 @@ public class Main {
 			while (k < length && sc14.hasNext()) {
 				list.add(sc14.nextInt());
 				k++;
-				file++;// количество обращений к файлу на считывание каждого элемента
+				file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 			}
 
 			k = 0;
 			while (k < length && sc24.hasNext()) {
 				list.add(sc24.nextInt());
 				k++;
-				file++;// количество обращений к файлу на считывание каждого элемента
+				file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 			}
 
 			k = 0;
 			while (k < length && sc34.hasNext()) {
 				list.add(sc34.nextInt());
 				k++;
-				file++;// количество обращений к файлу на считывание каждого элемента
+				file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 			}
 
 			Collections.sort(list);
@@ -269,19 +268,19 @@ public class Main {
 				for (int temp : list) {
 					f44.write(Integer.toString(temp));
 					f44.write(" ");
-					file++;// количество обращений к файлу на запись каждого элемента
+					file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г§Г ГЇГЁГ±Гј ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 				}
 			} else if (j == 1) {
 				for (int temp : list) {
 					f54.write(Integer.toString(temp));
 					f54.write(" ");
-					file++;// количество обращений к файлу на запись каждого элемента
+					file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г§Г ГЇГЁГ±Гј ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 				}
 			} else {
 				for (int temp : list) {
 					f64.write(Integer.toString(temp));
 					f64.write(" ");
-					file++;// количество обращений к файлу на запись каждого элемента
+					file++;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГЎГ°Г Г№ГҐГ­ГЁГ© ГЄ ГґГ Г©Г«Гі Г­Г  Г§Г ГЇГЁГ±Гј ГЄГ Г¦Г¤Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ 
 				}
 			}
 			j++;
